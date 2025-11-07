@@ -3,12 +3,14 @@ public class Jogo {
     private String genero;
     private int preco;
     private int avaliacao;
+    private int lancamento;
 
-    public Jogo(String nome, String genero, int preco, int avaliacao) { //construtor
+    public Jogo(String nome, String genero, int preco, int avaliacao, int lancamento) {
         this.nome = nome;
         this.genero = genero;
         this.preco = preco;
         this.avaliacao = avaliacao;
+        this.lancamento = lancamento;
     }
 
     //métodos
@@ -25,13 +27,16 @@ public class Jogo {
     public int getAvaliacao() {
         return avaliacao;
     }
+    public int getLancamento() {
+        return lancamento;
+    }
 
     @Override
     public String toString(){ //prepara a string ex: The Witcher 3 - RPG   ($150) ☆5 (achei fofo assim)
-        return nome + " - " + genero + "   (R$" + preco + ")" + " ☆" + avaliacao;
+        return nome + " - " + genero + " - " + lancamento + "   (R$" + preco + ")" + " ☆" + avaliacao;
     }
 
-//  O hashCode() gera um número inteiro baseado no objeto, que seria a sua posição base
+    //  O hashCode() gera um número inteiro baseado no objeto, que seria a sua posição base
 //  O equals() vai comparar se os dois objetos realmente são iguais
 //  eles andam juntos obrigatoriamente
     @Override
@@ -39,7 +44,7 @@ public class Jogo {
         return nome.toLowerCase().hashCode(); //converte tudo do nome do jogo pra minúsculo e dps gera um número hash pra ele
     }
 
-//  Aqui é onde ocorre a comparação entre objeto é o mesmo na memória
+    //  Aqui é onde ocorre a comparação entre objeto é o mesmo na memória
     @Override
     public boolean equals(Object obj){
         if (this == obj) return true; //compara com a memória

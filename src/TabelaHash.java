@@ -65,9 +65,15 @@ public class TabelaHash {
 
     //exportar pro vetor (copia os dados e manda da tabela hash até o array simples/vetor
     //teoricamente na tabela hash eles estão
-    public Jogo[] exportarVetor(){
+    public Jogo[] exportarVetor() {
         Jogo[] vetor = new Jogo[contarElementos()];
-        preencherRec(vetor, 0, 0);
+        int posicaoAtual = 0;
+
+        for (LinkedList<Jogo> lista : tabela) {
+            for (Jogo jogo : lista) {
+                vetor[posicaoAtual++] = jogo;
+            }
+        }
         return vetor;
     }
 
@@ -79,9 +85,11 @@ public class TabelaHash {
         return preencherRec(vetor, indiceTabela + 1, posicaoAtual);
     }
 
-    private int contarElementos(){
+    private int contarElementos() {
         int total = 0;
-        for (LinkedList<Jogo> lista : tabela) total += lista.size();
+        for (LinkedList<Jogo> lista : tabela) {
+            total += lista.size();
+        }
         return total;
     }
 
