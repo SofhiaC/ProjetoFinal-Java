@@ -174,9 +174,9 @@ public class Interface {
 
         // Aqui você depois chama seu algoritmo de ordenação correspondente
         switch (tipo) {
-            //     case "nome":
-            //         QuickSort.ordenarPorNome(jogos); // exemplo
-            //         break;
+            case "nome":
+                QuickSort.ordenarPorNome(jogos);
+                break;
             case "genero":
                 InsertionSort.ordenarPorGenero(jogos); // exemplo
                 break;
