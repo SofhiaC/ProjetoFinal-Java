@@ -180,9 +180,9 @@ public class Interface {
             case "genero":
                 InsertionSort.ordenarPorGenero(jogos); // exemplo
                 break;
-            //     case "ano":
-            //         BubbleSort.ordenarPorAno(jogos); // exemplo
-            //         break;
+            case "ano":
+                BubbleSort.ordenarPorAno(jogos); // exemplo
+                break;
         }
 
         listaJogos.setAll(jogos);
